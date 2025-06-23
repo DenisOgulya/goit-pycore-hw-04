@@ -1,6 +1,6 @@
 from pathlib import Path
 
-path_way = path_way = Path(__file__).parent / "path.txt"
+path_way = Path(__file__).parent / "path.txt"
 
 
 def total_salary(path_way):
