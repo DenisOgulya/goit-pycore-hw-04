@@ -9,6 +9,28 @@ def add_contacts(args, contacts):
     contacts[name] = phone
     return("Contact added")
 
+def show_phone(args, contacts):
+    name = args[0]
+    if name in contacts:
+        print (contacts[name])
+    else:
+        return("There is no contuct with such name!")
+
+def change_contact(args, contacts):
+    name, phone = args
+    if name in contacts:
+        contacts[name] = phone
+        return("Contact was changed")
+    else:
+        return("There is no contuct with such name!")
+
+
+
+def all_contacts(contacts):
+    for name, number in contacts.items():
+        print(name, number)
+  
+
 def main():
     contacts = {}
     print("Welcome to assistant bot")
@@ -23,6 +45,12 @@ def main():
             print("How can I help you?")
         elif command == "add":
             print(add_contacts(args, contacts))
+        elif command == "change":
+            print(change_contact(args, contacts))
+        elif command == "phone":
+            show_phone(args, contacts)
+        elif command == "all":
+            all_contacts(contacts)
         else:
             print("Invalid command")
             
